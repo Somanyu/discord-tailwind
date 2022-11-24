@@ -23,4 +23,26 @@
     text-white bg-gray-900 text-xs font-bold
     rounded-md shadow-md transition-all duration-300 scale-0 origin-left
   }
+
+  .sidebar-hr {
+    @apply bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mx-2
+  }
+
+  .channel-bar {
+    @apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800 overflow-hidden
+  }
+
+  .channel-block {
+    @apply flex items-center justify-center h-16 m-0 p-0
+  }
+
+  .channel-block-text {
+    @apply text-lg tracking-wider font-bold
+    text-gray-600 dark:text-gray-400
+    mr-auto my-auto ml-4 align-middle
+  }
+
+  .channel-container {
+    @apply flex flex-col items-center justify-start p-1 m-0
+  }
 }
