@@ -72,4 +72,41 @@
     mr-auto transition duration-300 ease-in-out
   hover:text-pink-500 dark:hover:text-gray-500 cursor-pointer
   }
+
+  .top-navigation {
+    @apply flex flex-row items-center justify-evenly w-full h-16 m-0
+    bg-gray-300 dark:bg-gray-700 bg-opacity-90 shadow-lg
+  }
+
+  .top-navigation-icon {
+    @apply mr-3 ml-4 text-gray-500 transition duration-300 ease-in-out hover:text-pink-400 cursor-pointer 
+  }
+
+  .top-navigation-icon:first {
+    @apply ml-auto mr-4
+  }
+
+  .title-hashtag {
+    @apply text-lg tracking-wider ml-2 my-auto font-semibold text-gray-500
+  }
+
+  .title-text {
+    @apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 
+    mr-auto ml-2 my-auto transition duration-300 ease-in-out
+  }
+
+  .search {
+    @apply w-1/5 flex items-center justify-start 
+    bg-gray-400 dark:bg-gray-600 text-gray-500 rounded-md shadow-md
+    px-2 h-9 ml-0 mr-0 transition duration-300 ease-in-out
+  }
+
+  .search-input {
+    @apply w-full font-sans font-semibold bg-transparent outline-none
+    text-gray-500 placeholder-gray-500 pl-1 rounded
+  }
+
+  .content-container {
+    @apply flex h-full w-full
+  }
 }
