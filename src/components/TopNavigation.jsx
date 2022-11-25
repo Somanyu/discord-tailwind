@@ -1,4 +1,5 @@
 import { FaSearch, FaHashtag, FaRegBell, FaUserCircle, FaMoon, FaSun } from 'react-icons/fa'
+import useDarkMode from '../hooks/darkMode'
 
 function TopNavigation() {
     return (
@@ -14,9 +15,16 @@ function TopNavigation() {
 }
 
 const ThemeIcon = () => {
-
+    const [darkTheme, setDarkTheme] = useDarkMode();
+    const handleMode = () => setDarkTheme(!darkTheme);
     return (
-        <FaSun size='24' className='top-navigation-icon' />
+        <span onClick={handleMode}>
+            {darkTheme ? (
+                <FaSun size='24' className='top-navigation-icon' />
+            ) : (
+                <FaMoon size='24' className='top-navigation-icon' />
+            )}
+        </span>
     )
 }
 
