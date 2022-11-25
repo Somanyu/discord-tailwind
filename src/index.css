@@ -2,6 +2,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 dark:bg-green-400;
+}
 
 *,
 *::before,
@@ -15,53 +22,53 @@
   .sidebar-icon {
     @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto
     bg-gray-400 hover:bg-green-600 dark:bg-gray-800 text-green-500 hover:text-white 
-    hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg
+    hover:rounded-xl rounded-3xl transition-all duration-300 ease-linear cursor-pointer shadow-lg;
   }
 
   .sidebar-tooltip {
     @apply absolute w-auto p-2 m-2 min-w-max left-14 
     text-white bg-gray-900 text-xs font-bold
-    rounded-md shadow-md transition-all duration-300 scale-0 origin-left
+    rounded-md shadow-md transition-all duration-300 scale-0 origin-left;
   }
 
   .sidebar-hr {
-    @apply bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mx-2
+    @apply bg-gray-200 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mx-2;
   }
 
   .channel-bar {
-    @apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800 overflow-hidden
+    @apply w-80 h-auto m-0 ml-16 bg-gray-200 dark:bg-gray-800 overflow-hidden;
   }
 
   .channel-block {
-    @apply flex items-center justify-center h-16 m-0 p-0
+    @apply flex items-center justify-center h-16 m-0 p-0;
   }
 
   .channel-block-text {
     @apply text-lg tracking-wider font-bold
     text-gray-600 dark:text-gray-400
-    mr-auto my-auto ml-4 align-middle
+    mr-auto my-auto ml-4 align-middle;
   }
 
   .channel-container {
-    @apply flex flex-col items-center justify-start p-1 m-0
+    @apply flex flex-col items-center justify-start p-1 m-0;
   }
 
   .dropdown {
-    @apply m-0 w-full px-2 pb-2 transition duration-300 ease-in-out
+    @apply m-0 w-full px-2 pb-2 transition duration-300 ease-in-out;
   }
 
   .dropdown-header {
-    @apply flex flex-row items-center justify-evenly mx-0 text-gray-500 cursor-pointer
+    @apply flex flex-row items-center justify-evenly mx-0 text-gray-500 cursor-pointer;
   }
 
   .dropdown-header-text {
-    @apply text-gray-500 text-opacity-90 text-lg font-semibold cursor-default
+    @apply text-gray-500 text-opacity-90 text-lg font-semibold cursor-default;
   }
 
   .dropdown-header-text-selected {
-    @apply text-blue-500 text-opacity-90 text-lg font-bold
+    @apply text-blue-500 text-opacity-90 text-lg font-bold;
   }
-  
+
   .dropdown-selection {
     @apply flex flex-row items-center justify-evenly mt-1 mr-auto ml-2 transition duration-300 ease-in-out
     cursor-pointer;
@@ -70,43 +77,93 @@
   .dropdown-selection-text {
     @apply text-gray-500 font-semibold tracking-wide
     mr-auto transition duration-300 ease-in-out
-  hover:text-pink-500 dark:hover:text-gray-500 cursor-pointer
+  hover:text-pink-500 dark:hover:text-gray-500 cursor-pointer;
   }
 
   .top-navigation {
     @apply flex flex-row items-center justify-evenly w-full h-16 m-0
-    bg-gray-300 dark:bg-gray-700 bg-opacity-90 shadow-lg
+    bg-gray-300 dark:bg-gray-700 bg-opacity-90 shadow-lg;
   }
 
   .top-navigation-icon {
-    @apply mr-3 ml-4 text-gray-500 transition duration-300 ease-in-out hover:text-pink-400 cursor-pointer 
+    @apply mr-3 ml-4 text-gray-500 transition duration-300 ease-in-out hover:text-pink-400 cursor-pointer;
   }
 
   .top-navigation-icon:first {
-    @apply ml-auto mr-4
+    @apply ml-auto mr-4;
   }
 
   .title-hashtag {
-    @apply text-lg tracking-wider ml-2 my-auto font-semibold text-gray-500
+    @apply text-lg tracking-wider ml-2 my-auto font-semibold text-gray-500;
   }
 
   .title-text {
     @apply text-xl text-gray-500 tracking-wider font-semibold text-opacity-80 
-    mr-auto ml-2 my-auto transition duration-300 ease-in-out
+    mr-auto ml-2 my-auto transition duration-300 ease-in-out;
   }
 
   .search {
     @apply w-1/5 flex items-center justify-start 
     bg-gray-400 dark:bg-gray-600 text-gray-500 rounded-md shadow-md
-    px-2 h-9 ml-0 mr-0 transition duration-300 ease-in-out
+    px-2 h-9 ml-0 mr-0 transition duration-300 ease-in-out;
   }
 
   .search-input {
     @apply w-full font-sans font-semibold bg-transparent outline-none
-    text-gray-500 placeholder-gray-500 pl-1 rounded
+    text-gray-500 placeholder-gray-500 pl-1 rounded;
   }
 
   .content-container {
-    @apply flex h-full w-full
+    @apply flex flex-col h-full w-full m-0
+    bg-gray-300 dark:bg-gray-700 overflow-hidden;
+  }
+
+  .content-list {
+    @apply flex flex-col items-center w-full h-full 
+    mt-0 ml-0 /* *incomplete*/;
+  }
+
+  .post {
+    @apply w-full flex flex-row items-center justify-evenly py-4 px-8 m-0 cursor-pointer;
+  }
+
+  .post-selected {
+    @apply bg-green-400 dark:bg-gray-900 shadow-md
+  }
+
+  .post-content {
+    @apply w-4/5 flex flex-col justify-start ml-auto
+  }
+
+  .avatar {
+    @apply flex-none w-12 h-full mb-auto mt-0 mx-0 object-cover 
+    bg-gray-100 rounded-full shadow-md cursor-pointer
+  }
+
+  .post-text {
+    @apply text-lg text-left text-gray-800 dark:text-white mr-auto whitespace-normal
+  }
+
+  .post-owner {
+    @apply text-left mr-2 font-semibold text-gray-800 dark:text-white cursor-pointer;
+  }
+
+  .timestamp {
+    @apply text-xs text-left font-semibold text-gray-500 dark:text-gray-600 ml-2;
+  }
+
+  .avatar-wrapper {
+    @apply flex flex-col items-center w-12 m-0 ml-auto mb-auto;
+  }
+
+  .bottom-bar {
+    @apply flex flex-row items-center justify-between fixed left-88 right-8 bottom-2
+    rounded-lg shadow-lg bg-gray-400 dark:bg-gray-600
+    px-2 h-12
+  }
+
+  .bottom-bar-input{
+    @apply font-semibold w-full ml-0 mr-auto cursor-text
+    bg-transparent outline-none text-gray-500  dark:text-gray-400 placeholder-gray-500
   }
 }

@@ -1,4 +1,5 @@
 import ChannelBar from './components/Channelbar';
+import ContentContainer from './components/ContentContainer';
 import SideBar from './components/Sidebar';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="flex ">
       <SideBar/>
       <ChannelBar/>
+      <ContentContainer/>
     </div>
   );
 }
